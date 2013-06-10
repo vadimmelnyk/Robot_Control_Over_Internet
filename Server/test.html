@@ -1,0 +1,79 @@
+<head>
+<style media="screen" type="text/css">
+ #intro-wrap {
+    position: relative;
+    z-index: 1;
+    border-left: 25px solid rgba(0,0,0,.2);
+    width: 200px;
+}
+#contentWrap{
+    background: rgba(0,0,0,.8);
+    padding: 15px 40px 25px 30px;
+}
+
+#intro-wrap h1 {
+    font-family: "PT Sans Narrow";
+    font-size: 25px;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 0px !important;
+    padding-bottom: 10px;
+}
+
+#intro-wrap p {
+    line-height: 19px;
+    color: #999;
+}
+.open-intro,
+.close-intro {
+    position:absolute;
+    left:200px;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    z-index: 50;
+    padding-left:15px;
+}
+.open-intro {
+    display: none;
+    background: yellow 
+}
+.close-intro {
+    background: red; 
+}
+
+</style>
+
+</head>
+<div id="intro-wrap">
+<div class="open-intro">+</div>
+<div class="close-intro">-</div>
+<div id="contentWrap">
+    <h1 class="main-header">Here is a Title</h1>
+    <p class="main-desc">You can write whatever you want about yourself here. You can say you're a superhuman alien ant, arrived from the nether regions of Dwarf-Ant-Dom.</p>
+</div>
+ <script src="js/jquery-1.6.4.min.js"></script>
+<script>
+$('.open-intro').click(function() {
+    $('#intro-wrap').animate({
+    //opacity: 1,
+    left: '0',
+  }, 500, function() {
+    // Animation complete.
+  });
+    $('.open-intro').hide();
+    $('.close-intro').show();
+});
+
+
+$('.close-intro').click(function() {
+    $('#intro-wrap').animate({
+    //opacity: 0.25,
+    left: '-225',
+  }, 400, function() {
+    // Animation complete.
+  });
+    $('.open-intro').show();
+    $('.close-intro').hide();
+});
+</script>
